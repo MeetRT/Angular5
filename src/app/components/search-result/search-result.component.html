@@ -1,0 +1,21 @@
+<div *ngIf="flightList.length>0">
+  Result Found ;
+  <table>
+    <tr>
+      <td>Flight Name</td>
+      <td>From</td>
+      <td>To</td>
+      <td>Total Seats</td>
+      <td>Available Seats</td>
+      <td>Book Ticket</td>
+    </tr>
+    <tr *ngFor="let item of flightList">
+      <td>{{item.flightName}}</td>
+      <td>{{item.from}}</td>
+      <td>{{item.to}}</td>
+      <td>{{item.totalSeats}}</td>
+      <td>{{item.availbleSeats}}</td>
+      <td *ngIf="item.availbleSeats>100"><button >Book Ticket</button></td>
+    </tr>
+  </table>
+</div>
